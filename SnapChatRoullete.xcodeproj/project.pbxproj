@@ -13,15 +13,31 @@
 		DB58993C18FCD23600C947AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB58993A18FCD23600C947AC /* InfoPlist.strings */; };
 		DB58993E18FCD23600C947AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58993D18FCD23600C947AC /* main.m */; };
 		DB58994218FCD23600C947AC /* RZAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58994118FCD23600C947AC /* RZAppDelegate.m */; };
-		DB58994518FCD23600C947AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB58994318FCD23600C947AC /* Main.storyboard */; };
-		DB58994818FCD23600C947AC /* RZFirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58994718FCD23600C947AC /* RZFirstViewController.m */; };
-		DB58994B18FCD23600C947AC /* RZSecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58994A18FCD23600C947AC /* RZSecondViewController.m */; };
 		DB58994D18FCD23600C947AC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB58994C18FCD23600C947AC /* Images.xcassets */; };
 		DB58995418FCD23600C947AC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58995318FCD23600C947AC /* XCTest.framework */; };
 		DB58995518FCD23600C947AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58993118FCD23600C947AC /* Foundation.framework */; };
 		DB58995618FCD23600C947AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58993518FCD23600C947AC /* UIKit.framework */; };
 		DB58995E18FCD23600C947AC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB58995C18FCD23600C947AC /* InfoPlist.strings */; };
 		DB58996018FCD23600C947AC /* SnapChatRoulleteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58995F18FCD23600C947AC /* SnapChatRoulleteTests.m */; };
+		DB58998D18FCD31600C947AC /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998018FCD31600C947AC /* CameraViewController.m */; };
+		DB58998E18FCD31600C947AC /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998218FCD31600C947AC /* EditFriendsViewController.m */; };
+		DB58998F18FCD31600C947AC /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998418FCD31600C947AC /* FriendsViewController.m */; };
+		DB58999018FCD31600C947AC /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998618FCD31600C947AC /* ImageViewController.m */; };
+		DB58999118FCD31600C947AC /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998818FCD31600C947AC /* InboxViewController.m */; };
+		DB58999218FCD31600C947AC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998A18FCD31600C947AC /* LoginViewController.m */; };
+		DB58999318FCD31600C947AC /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58998C18FCD31600C947AC /* SignupViewController.m */; };
+		DB58999518FCD35900C947AC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58999418FCD35900C947AC /* MediaPlayer.framework */; };
+		DB58999718FCD35F00C947AC /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58999618FCD35F00C947AC /* AudioToolbox.framework */; };
+		DB58999918FCD36500C947AC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58999818FCD36500C947AC /* CFNetwork.framework */; };
+		DB58999B18FCD36E00C947AC /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58999A18FCD36E00C947AC /* CoreLocation.framework */; };
+		DB58999D18FCD37800C947AC /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58999C18FCD37800C947AC /* libz.1.1.3.dylib */; };
+		DB58999F18FCD38100C947AC /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB58999E18FCD38000C947AC /* MobileCoreServices.framework */; };
+		DB5899A118FCD38700C947AC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5899A018FCD38700C947AC /* QuartzCore.framework */; };
+		DB5899A318FCD38E00C947AC /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5899A218FCD38E00C947AC /* Security.framework */; };
+		DB5899A518FCD39500C947AC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5899A418FCD39500C947AC /* StoreKit.framework */; };
+		DB5899A718FCD39E00C947AC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5899A618FCD39E00C947AC /* SystemConfiguration.framework */; };
+		DB5899A918FCD3B700C947AC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5899A818FCD3B700C947AC /* Parse.framework */; };
+		DB5899AB18FCD51B00C947AC /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB5899AA18FCD51B00C947AC /* MainStoryboard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,17 +61,38 @@
 		DB58993F18FCD23600C947AC /* SnapChatRoullete-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SnapChatRoullete-Prefix.pch"; sourceTree = "<group>"; };
 		DB58994018FCD23600C947AC /* RZAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZAppDelegate.h; sourceTree = "<group>"; };
 		DB58994118FCD23600C947AC /* RZAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZAppDelegate.m; sourceTree = "<group>"; };
-		DB58994418FCD23600C947AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB58994618FCD23600C947AC /* RZFirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZFirstViewController.h; sourceTree = "<group>"; };
-		DB58994718FCD23600C947AC /* RZFirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZFirstViewController.m; sourceTree = "<group>"; };
-		DB58994918FCD23600C947AC /* RZSecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RZSecondViewController.h; sourceTree = "<group>"; };
-		DB58994A18FCD23600C947AC /* RZSecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RZSecondViewController.m; sourceTree = "<group>"; };
 		DB58994C18FCD23600C947AC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		DB58995218FCD23600C947AC /* SnapChatRoulleteTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SnapChatRoulleteTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB58995318FCD23600C947AC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		DB58995B18FCD23600C947AC /* SnapChatRoulleteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnapChatRoulleteTests-Info.plist"; sourceTree = "<group>"; };
 		DB58995D18FCD23600C947AC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB58995F18FCD23600C947AC /* SnapChatRoulleteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnapChatRoulleteTests.m; sourceTree = "<group>"; };
+		DB58997F18FCD31600C947AC /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		DB58998018FCD31600C947AC /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		DB58998118FCD31600C947AC /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		DB58998218FCD31600C947AC /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
+		DB58998318FCD31600C947AC /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		DB58998418FCD31600C947AC /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		DB58998518FCD31600C947AC /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		DB58998618FCD31600C947AC /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		DB58998718FCD31600C947AC /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		DB58998818FCD31600C947AC /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		DB58998918FCD31600C947AC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DB58998A18FCD31600C947AC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DB58998B18FCD31600C947AC /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		DB58998C18FCD31600C947AC /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		DB58999418FCD35900C947AC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		DB58999618FCD35F00C947AC /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		DB58999818FCD36500C947AC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		DB58999A18FCD36E00C947AC /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		DB58999C18FCD37800C947AC /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		DB58999E18FCD38000C947AC /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		DB5899A018FCD38700C947AC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		DB5899A218FCD38E00C947AC /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		DB5899A418FCD39500C947AC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DB5899A618FCD39E00C947AC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		DB5899A818FCD3B700C947AC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = ../../../Downloads/Parse.framework; sourceTree = "<group>"; };
+		DB5899AA18FCD51B00C947AC /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = MainStoryboard.storyboard; path = ../Ribbit/MainStoryboard.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +100,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB5899A918FCD3B700C947AC /* Parse.framework in Frameworks */,
 				DB58993418FCD23600C947AC /* CoreGraphics.framework in Frameworks */,
+				DB5899A718FCD39E00C947AC /* SystemConfiguration.framework in Frameworks */,
+				DB5899A518FCD39500C947AC /* StoreKit.framework in Frameworks */,
+				DB5899A318FCD38E00C947AC /* Security.framework in Frameworks */,
+				DB5899A118FCD38700C947AC /* QuartzCore.framework in Frameworks */,
+				DB58999F18FCD38100C947AC /* MobileCoreServices.framework in Frameworks */,
+				DB58999D18FCD37800C947AC /* libz.1.1.3.dylib in Frameworks */,
+				DB58999B18FCD36E00C947AC /* CoreLocation.framework in Frameworks */,
+				DB58999918FCD36500C947AC /* CFNetwork.framework in Frameworks */,
+				DB58999718FCD35F00C947AC /* AudioToolbox.framework in Frameworks */,
+				DB58999518FCD35900C947AC /* MediaPlayer.framework in Frameworks */,
 				DB58993618FCD23600C947AC /* UIKit.framework in Frameworks */,
 				DB58993218FCD23600C947AC /* Foundation.framework in Frameworks */,
 			);
@@ -85,6 +133,7 @@
 		DB58992518FCD23600C947AC = {
 			isa = PBXGroup;
 			children = (
+				DB5899AA18FCD51B00C947AC /* MainStoryboard.storyboard */,
 				DB58993718FCD23600C947AC /* SnapChatRoullete */,
 				DB58995918FCD23600C947AC /* SnapChatRoulleteTests */,
 				DB58993018FCD23600C947AC /* Frameworks */,
@@ -104,6 +153,17 @@
 		DB58993018FCD23600C947AC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB5899A818FCD3B700C947AC /* Parse.framework */,
+				DB5899A618FCD39E00C947AC /* SystemConfiguration.framework */,
+				DB5899A418FCD39500C947AC /* StoreKit.framework */,
+				DB5899A218FCD38E00C947AC /* Security.framework */,
+				DB5899A018FCD38700C947AC /* QuartzCore.framework */,
+				DB58999E18FCD38000C947AC /* MobileCoreServices.framework */,
+				DB58999C18FCD37800C947AC /* libz.1.1.3.dylib */,
+				DB58999A18FCD36E00C947AC /* CoreLocation.framework */,
+				DB58999818FCD36500C947AC /* CFNetwork.framework */,
+				DB58999618FCD35F00C947AC /* AudioToolbox.framework */,
+				DB58999418FCD35900C947AC /* MediaPlayer.framework */,
 				DB58993118FCD23600C947AC /* Foundation.framework */,
 				DB58993318FCD23600C947AC /* CoreGraphics.framework */,
 				DB58993518FCD23600C947AC /* UIKit.framework */,
@@ -115,13 +175,22 @@
 		DB58993718FCD23600C947AC /* SnapChatRoullete */ = {
 			isa = PBXGroup;
 			children = (
+				DB58997F18FCD31600C947AC /* CameraViewController.h */,
+				DB58998018FCD31600C947AC /* CameraViewController.m */,
+				DB58998118FCD31600C947AC /* EditFriendsViewController.h */,
+				DB58998218FCD31600C947AC /* EditFriendsViewController.m */,
+				DB58998318FCD31600C947AC /* FriendsViewController.h */,
+				DB58998418FCD31600C947AC /* FriendsViewController.m */,
+				DB58998518FCD31600C947AC /* ImageViewController.h */,
+				DB58998618FCD31600C947AC /* ImageViewController.m */,
+				DB58998718FCD31600C947AC /* InboxViewController.h */,
+				DB58998818FCD31600C947AC /* InboxViewController.m */,
+				DB58998918FCD31600C947AC /* LoginViewController.h */,
+				DB58998A18FCD31600C947AC /* LoginViewController.m */,
+				DB58998B18FCD31600C947AC /* SignupViewController.h */,
+				DB58998C18FCD31600C947AC /* SignupViewController.m */,
 				DB58994018FCD23600C947AC /* RZAppDelegate.h */,
 				DB58994118FCD23600C947AC /* RZAppDelegate.m */,
-				DB58994318FCD23600C947AC /* Main.storyboard */,
-				DB58994618FCD23600C947AC /* RZFirstViewController.h */,
-				DB58994718FCD23600C947AC /* RZFirstViewController.m */,
-				DB58994918FCD23600C947AC /* RZSecondViewController.h */,
-				DB58994A18FCD23600C947AC /* RZSecondViewController.m */,
 				DB58994C18FCD23600C947AC /* Images.xcassets */,
 				DB58993818FCD23600C947AC /* Supporting Files */,
 			);
@@ -205,6 +274,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Roger Zurawicki";
 				TargetAttributes = {
+					DB58992D18FCD23600C947AC = {
+						DevelopmentTeam = D4HDFSUKPE;
+					};
 					DB58995118FCD23600C947AC = {
 						TestTargetID = DB58992D18FCD23600C947AC;
 					};
@@ -234,9 +306,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB5899AB18FCD51B00C947AC /* MainStoryboard.storyboard in Resources */,
 				DB58994D18FCD23600C947AC /* Images.xcassets in Resources */,
 				DB58993C18FCD23600C947AC /* InfoPlist.strings in Resources */,
-				DB58994518FCD23600C947AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,9 +327,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB58998D18FCD31600C947AC /* CameraViewController.m in Sources */,
 				DB58994218FCD23600C947AC /* RZAppDelegate.m in Sources */,
-				DB58994818FCD23600C947AC /* RZFirstViewController.m in Sources */,
-				DB58994B18FCD23600C947AC /* RZSecondViewController.m in Sources */,
+				DB58999018FCD31600C947AC /* ImageViewController.m in Sources */,
+				DB58998F18FCD31600C947AC /* FriendsViewController.m in Sources */,
+				DB58999318FCD31600C947AC /* SignupViewController.m in Sources */,
+				DB58999218FCD31600C947AC /* LoginViewController.m in Sources */,
+				DB58999118FCD31600C947AC /* InboxViewController.m in Sources */,
+				DB58998E18FCD31600C947AC /* EditFriendsViewController.m in Sources */,
 				DB58993E18FCD23600C947AC /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,14 +364,6 @@
 				DB58993B18FCD23600C947AC /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		DB58994318FCD23600C947AC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB58994418FCD23600C947AC /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		DB58995C18FCD23600C947AC /* InfoPlist.strings */ = {
@@ -383,10 +452,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/roger/Downloads,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapChatRoullete/SnapChatRoullete-Prefix.pch";
 				INFOPLIST_FILE = "SnapChatRoullete/SnapChatRoullete-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -396,10 +472,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/roger/Downloads,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapChatRoullete/SnapChatRoullete-Prefix.pch";
 				INFOPLIST_FILE = "SnapChatRoullete/SnapChatRoullete-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

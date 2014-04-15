@@ -7,12 +7,14 @@
 //
 
 #import "RZAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation RZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    [Parse setApplicationId:@"UsYb8eLCNnrv4Ar1FHLzlsedsLAFoQUf7QKGAIy5"
+                  clientKey:@"qcSwRespQYw7b7XNGoa8BtE3KmSPGy1ZaYpuCWJF"];
     return YES;
 }
 							
