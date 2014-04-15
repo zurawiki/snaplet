@@ -27,11 +27,17 @@
     else {
         [self performSegueWithIdentifier:@"showLogin" sender:self];
     }
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Pull to Refresh"];
+    [refresh addTarget:self action:@selector(refreshData) forControlEvents:UIControlEventValueChanged];
+
+    self.refreshControl = refresh;
+    
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
+- (void)refreshData {
     PFQuery *query = [PFQuery queryWithClassName:@"Messages"];
     [query whereKey:@"recipientIds" equalTo:[[PFUser currentUser] objectId]];
     [query orderByDescending:@"createdAt"];
@@ -43,9 +49,26 @@
             // We found messages!
             self.messages = objects;
             [self.tableView reloadData];
-            NSLog(@"Retrieved %d messages", [self.messages count]);
+            NSLog(@"Retrieved %lu messages", (unsigned long)[self.messages count]);
         }
+        [self stopRefresh];
     }];
+
+    
+}
+
+- (void)stopRefresh
+
+{
+    
+    [self.refreshControl endRefreshing];
+    
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self refreshData];
+
 }
 
 #pragma mark - Table view data source
