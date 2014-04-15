@@ -23,19 +23,6 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
-    
-    PFQuery *query = [self.friendsRelation query];
-    [query orderByAscending:@"username"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        if (error) {
-            NSLog(@"Error %@ %@", error, [error userInfo]);
-        }
-        else {
-            self.friends = objects;
-            [self.tableView reloadData];
-        }
-    }];
     
     if (self.image == nil && [self.videoFilePath length] == 0) {
         self.imagePicker = [[UIImagePickerController alloc] init];
@@ -54,59 +41,6 @@
         
         [self presentViewController:self.imagePicker animated:NO completion:nil];
     }    
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    // Return the number of sections.
-    return 1;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    // Return the number of rows in the section.
-    return [self.friends count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
-    PFUser *user = [self.friends objectAtIndex:indexPath.row];
-    cell.textLabel.text = user.username;
-    
-    if ([self.recipients containsObject:user.objectId]) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
-    
-    return cell;
-}
-
-#pragma mark - Table view delegate
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
-    
-    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
-    PFUser *user = [self.friends objectAtIndex:indexPath.row];
-    
-    if (cell.accessoryType == UITableViewCellAccessoryNone) {
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
-        [self.recipients addObject:user.objectId];
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-        [self.recipients removeObject:user.objectId];
-    }
-
-    NSLog(@"%@", self.recipients);
 }
 
 #pragma mark - Image Picker Controller delegate
@@ -143,13 +77,21 @@
 
 #pragma mark - IBActions
 
+- (IBAction)reply:(id)sender {
+    return [self send:NO];
+}
+
+- (IBAction)newPerson:(id)sender {
+    return [self send:YES];
+}
+
 - (IBAction)cancel:(id)sender {
     [self reset];
     
     [self.tabBarController setSelectedIndex:0];
 }
 
-- (IBAction)send:(id)sender {
+- (IBAction)send:(BOOL)newPerson {
     if (self.image == nil && [self.videoFilePath length] == 0) {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Try again!"
                                                             message:@"Please capture or select a photo or video to share!"
@@ -158,14 +100,14 @@
         [self presentViewController:self.imagePicker animated:NO completion:nil];
     }
     else {
-        [self uploadMessage];
+        [self uploadMessage:newPerson];
         [self.tabBarController setSelectedIndex:0];
     }
 }
 
 #pragma mark - Helper methods
 
-- (void)uploadMessage {
+- (void)uploadMessage:(BOOL)newPerson {
     NSData *fileData;
     NSString *fileName;
     NSString *fileType;
@@ -182,6 +124,37 @@
         fileType = @"video";
     }
     
+    // get pairings
+    
+    // if null or new user
+    // get rando user
+    
+    //set pairing and recipient
+    NSObject *recipient = nil;
+    if (newPerson || !([[PFUser currentUser] objectForKey:@"pairing"]) ) {
+        // get random person
+        // Get the max index of any user (+1).
+        PFQuery* users = [PFUser query];
+        int maxIndex = (int)[users countObjects];
+        
+        // Randomly pick an index in the range of all indices.
+        int randomIndex = arc4random() % maxIndex;
+        
+        // Get the users with that particular index.
+        [users whereKey:@"index" equalTo:[NSNumber numberWithInt:randomIndex]];
+        PFObject *pairing = [users getFirstObject];
+        
+        // update pairing
+        [[PFUser currentUser] setObject:pairing forKey:@"pairing"];
+        recipient = pairing;
+        
+    }
+    else {
+        // use current person
+        NSObject *pairing = [[PFUser currentUser] objectForKey:@"pairing"];
+        recipient = pairing;
+    }
+    
     PFFile *file = [PFFile fileWithName:fileName data:fileData];
     [file saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (error) {
@@ -194,7 +167,11 @@
             PFObject *message = [PFObject objectWithClassName:@"Messages"];
             [message setObject:file forKey:@"file"];
             [message setObject:fileType forKey:@"fileType"];
-            [message setObject:self.recipients forKey:@"recipientIds"];
+            
+            
+            [message setObject:@[recipient] forKey:@"recipientIds"];
+            
+            
             [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
             [message setObject:[[PFUser currentUser] username] forKey:@"senderName"];
             [message saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {

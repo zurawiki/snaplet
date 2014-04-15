@@ -22,7 +22,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"pairings"];
 
     PFQuery *query = [self.friendsRelation query];
     [query orderByAscending:@"username"];
