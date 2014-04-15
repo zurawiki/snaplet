@@ -18,7 +18,7 @@ With every pic, you can choose to send it to the same person or a new stranger.
 
 
 ## What's included
-    Xcode project
+    Xcode project (open this project in Xcode and hit run, it is that easy!)
     Parse framework (library)
 
 ## Functionality
