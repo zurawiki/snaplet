@@ -130,7 +130,7 @@
     // get rando user
     
     //set pairing and recipient
-    NSObject *recipient = nil;
+    PFObject *recipient = nil;
     if (newPerson || !([[PFUser currentUser] objectForKey:@"pairing"]) ) {
         // get random person
         // Get the max index of any user (+1).
@@ -141,17 +141,16 @@
         int randomIndex = arc4random() % maxIndex;
         
         // Get the users with that particular index.
-        [users whereKey:@"index" equalTo:[NSNumber numberWithInt:randomIndex]];
-        PFObject *pairing = [users getFirstObject];
+        PFObject *pairing = [users findObjects][randomIndex] ;
         
         // update pairing
-        [[PFUser currentUser] setObject:pairing forKey:@"pairing"];
+        [[PFUser currentUser] setObject:pairing forKey:@"pairing"] ;
         recipient = pairing;
-        
+        NSLog(@"Sending to %@", recipient);
     }
     else {
         // use current person
-        NSObject *pairing = [[PFUser currentUser] objectForKey:@"pairing"];
+        PFObject *pairing = [[PFUser currentUser] objectForKey:@"pairing"];
         recipient = pairing;
     }
     
@@ -169,7 +168,7 @@
             [message setObject:fileType forKey:@"fileType"];
             
             
-            [message setObject:@[recipient] forKey:@"recipientIds"];
+            [message setObject:@[[recipient objectId]] forKey:@"recipientIds"];
             
             
             [message setObject:[[PFUser currentUser] objectId] forKey:@"senderId"];
