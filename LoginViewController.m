@@ -26,7 +26,7 @@
 /* Login to facebook method */
 - (IBAction)loginButtonTouchHandler:(id)sender  {
     // Set permissions required from the facebook user account
-    NSArray *permissionsArray = @[ @"read_friendlists"];
+    NSArray *permissionsArray = @[ @"user_about_me", @"user_relationships", @"user_birthday", @"user_location"];
     
     // Login PFUser using facebook
     [PFFacebookUtils logInWithPermissions:permissionsArray block:^(PFUser *user, NSError *error) {
@@ -39,8 +39,7 @@
                 [alert show];
             } else {
                 NSLog(@"Uh oh. An error occurred: %@", error);
-                NSString *helpText = [FBErrorUtility userMessageForError:error];
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:helpText delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
+                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log In Error" message:[error description] delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Dismiss", nil];
                 [alert show];
             }
         } else if (user.isNew) {

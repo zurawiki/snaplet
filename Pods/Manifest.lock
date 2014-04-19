@@ -1,13 +1,16 @@
 PODS:
+  - ACEDrawingView (1.1.0)
   - Facebook-iOS-SDK (3.13.1)
   - Parse (1.2.19):
     - Facebook-iOS-SDK (~> 3.11)
 
 DEPENDENCIES:
+  - ACEDrawingView
   - Facebook-iOS-SDK
   - Parse
 
 SPEC CHECKSUMS:
+  ACEDrawingView: c6d1c0ebe4d64e77d5c24dd41d1141ec87f2aeec
   Facebook-iOS-SDK: 0d121e16437981fabff9379e07bf646bd5ab245c
   Parse: 3739f0b211c49115bad96d6b0969b804d4da2f24
 

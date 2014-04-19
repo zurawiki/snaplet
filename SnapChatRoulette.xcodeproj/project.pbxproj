@@ -14,7 +14,6 @@
 		DB3B95A2190211460018446A /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9599190211460018446A /* FriendsViewController.m */; };
 		DB3B95A3190211460018446A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959B190211460018446A /* ImageViewController.m */; };
 		DB3B95A4190211460018446A /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959D190211460018446A /* InboxViewController.m */; };
-		DB3B95A5190211460018446A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959F190211460018446A /* LoginViewController.m */; };
 		DB3B95C31902124B0018446A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3B95C21902124B0018446A /* MainStoryboard.storyboard */; };
 		DB5B55F419020F0C00D34DB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F319020F0C00D34DB9 /* Foundation.framework */; };
 		DB5B55F619020F0C00D34DB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F519020F0C00D34DB9 /* CoreGraphics.framework */; };
@@ -28,6 +27,11 @@
 		DB5B560F19020F0C00D34DB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F719020F0C00D34DB9 /* UIKit.framework */; };
 		DB5B561719020F0C00D34DB9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DB5B561519020F0C00D34DB9 /* InfoPlist.strings */; };
 		DB5B561919020F0C00D34DB9 /* SnapChatRouletteTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB5B561819020F0C00D34DB9 /* SnapChatRouletteTests.m */; };
+		DB9C97721902256A00F1B3E0 /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9C97701902256A00F1B3E0 /* UserDetailsViewController.m */; };
+		DB9C97731902256A00F1B3E0 /* UserDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9C97711902256A00F1B3E0 /* UserDetailsViewController.xib */; };
+		DB9C9776190227CB00F1B3E0 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB9C9775190227CB00F1B3E0 /* LoginViewController.m */; };
+		DB9C9778190227F200F1B3E0 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9C9777190227F200F1B3E0 /* LoginViewController.xib */; };
+		DB9C977A1902298A00F1B3E0 /* TableHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB9C97791902298A00F1B3E0 /* TableHeaderView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,8 +59,6 @@
 		DB3B959B190211460018446A /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
 		DB3B959C190211460018446A /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
 		DB3B959D190211460018446A /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
-		DB3B959E190211460018446A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		DB3B959F190211460018446A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		DB3B95C21902124B0018446A /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DB5AA36A190214C700342064 /* libPods-Facebook-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Facebook-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Facebook-iOS-SDK.a"; sourceTree = "<group>"; };
 		DB5AA36B190214C700342064 /* libPods-Parse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Parse.a"; path = "Pods/build/Debug-iphoneos/libPods-Parse.a"; sourceTree = "<group>"; };
@@ -76,6 +78,13 @@
 		DB5B561419020F0C00D34DB9 /* SnapChatRouletteTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SnapChatRouletteTests-Info.plist"; sourceTree = "<group>"; };
 		DB5B561619020F0C00D34DB9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DB5B561819020F0C00D34DB9 /* SnapChatRouletteTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SnapChatRouletteTests.m; sourceTree = "<group>"; };
+		DB9C976F1902256A00F1B3E0 /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		DB9C97701902256A00F1B3E0 /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		DB9C97711902256A00F1B3E0 /* UserDetailsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserDetailsViewController.xib; sourceTree = "<group>"; };
+		DB9C9774190227CB00F1B3E0 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DB9C9775190227CB00F1B3E0 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DB9C9777190227F200F1B3E0 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		DB9C97791902298A00F1B3E0 /* TableHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableHeaderView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,8 +115,8 @@
 		DB5B55E719020F0C00D34DB9 = {
 			isa = PBXGroup;
 			children = (
-				DB5B55F919020F0C00D34DB9 /* SnapChatRoulette */,
 				DB3B95C21902124B0018446A /* MainStoryboard.storyboard */,
+				DB5B55F919020F0C00D34DB9 /* SnapChatRoulette */,
 				B854933123E44C5986E7A106 /* Pods.xcconfig */,
 				DB5B55F219020F0C00D34DB9 /* Frameworks */,
 				DB5B55F119020F0C00D34DB9 /* Products */,
@@ -153,13 +162,18 @@
 				DB3B959B190211460018446A /* ImageViewController.m */,
 				DB3B959C190211460018446A /* InboxViewController.h */,
 				DB3B959D190211460018446A /* InboxViewController.m */,
-				DB3B959E190211460018446A /* LoginViewController.h */,
-				DB3B959F190211460018446A /* LoginViewController.m */,
+				DB9C9774190227CB00F1B3E0 /* LoginViewController.h */,
+				DB9C9775190227CB00F1B3E0 /* LoginViewController.m */,
+				DB9C9777190227F200F1B3E0 /* LoginViewController.xib */,
 				DB5B560219020F0C00D34DB9 /* RZAppDelegate.h */,
 				DB5B560319020F0C00D34DB9 /* RZAppDelegate.m */,
 				DB3B9585190210920018446A /* SignupViewController.h */,
 				DB3B9586190210920018446A /* SignupViewController.m */,
 				DB5B55FA19020F0C00D34DB9 /* Supporting Files */,
+				DB9C976F1902256A00F1B3E0 /* UserDetailsViewController.h */,
+				DB9C97701902256A00F1B3E0 /* UserDetailsViewController.m */,
+				DB9C97711902256A00F1B3E0 /* UserDetailsViewController.xib */,
+				DB9C97791902298A00F1B3E0 /* TableHeaderView.xib */,
 			);
 			path = SnapChatRoulette;
 			sourceTree = "<group>";
@@ -274,8 +288,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB9C9778190227F200F1B3E0 /* LoginViewController.xib in Resources */,
 				DB5B55FE19020F0C00D34DB9 /* InfoPlist.strings in Resources */,
 				DB5B560619020F0C00D34DB9 /* Images.xcassets in Resources */,
+				DB9C97731902256A00F1B3E0 /* UserDetailsViewController.xib in Resources */,
+				DB9C977A1902298A00F1B3E0 /* TableHeaderView.xib in Resources */,
 				DB3B95C31902124B0018446A /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,10 +349,11 @@
 				DB3B95A0190211460018446A /* CameraViewController.m in Sources */,
 				DB3B95A2190211460018446A /* FriendsViewController.m in Sources */,
 				DB3B95A1190211460018446A /* EditFriendsViewController.m in Sources */,
+				DB9C9776190227CB00F1B3E0 /* LoginViewController.m in Sources */,
 				DB3B95A3190211460018446A /* ImageViewController.m in Sources */,
 				DB3B95A4190211460018446A /* InboxViewController.m in Sources */,
 				DB5B560019020F0C00D34DB9 /* main.m in Sources */,
-				DB3B95A5190211460018446A /* LoginViewController.m in Sources */,
+				DB9C97721902256A00F1B3E0 /* UserDetailsViewController.m in Sources */,
 				DB3B9587190210920018446A /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

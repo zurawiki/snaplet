@@ -80,6 +80,21 @@
                                     <segue destination="EZc-59-qKm" kind="push" id="Qwo-lL-hgI"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNY-i7-mlT" customClass="FBLoginView">
+                                <rect key="frame" x="27" y="254" width="266" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN4-Vb-3bf">
+                                <rect key="frame" x="137" y="387" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="loginButtonTouchHandler:" destination="BA1-Cp-RJu" eventType="touchUpInside" id="Bw0-P5-B04"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -101,6 +116,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Ribbit" id="Xza-Tr-b7l"/>
                     <connections>
+                        <outlet property="loginView" destination="qNY-i7-mlT" id="rns-24-EkH"/>
                         <outlet property="passwordField" destination="LtO-lO-faO" id="rSb-1I-Y0G"/>
                         <outlet property="usernameField" destination="NRF-Ak-4Dc" id="y7s-w5-eCh"/>
                     </connections>
