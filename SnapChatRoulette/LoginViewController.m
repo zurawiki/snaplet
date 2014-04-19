@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import <FacebookSDK/FacebookSDK.h>
 
 @interface LoginViewController ()
 
@@ -18,8 +19,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    [FBLoginView class];
 
     self.navigationItem.hidesBackButton = YES;
+    FBLoginView *loginView = [[FBLoginView alloc] init];
+    [self.view addSubview:loginView];
+    // Align the button in the center horizontally
+    loginView.frame = CGRectOffset(loginView.frame, (self.view.center.x - (loginView.frame.size.width / 2)), 5);
+    [self.view addSubview:loginView];
+
 }
 
 

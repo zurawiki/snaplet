@@ -111,8 +111,8 @@
         PFFile *videoFile = [self.selectedMessage objectForKey:@"file"];
         NSURL *fileUrl = [NSURL URLWithString:videoFile.url];
         self.moviePlayer.contentURL = fileUrl;
+        [self.moviePlayer setShouldAutoplay:YES];
         [self.moviePlayer prepareToPlay];
-        [self.moviePlayer thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
 
         // Add it to the view controller so we can see it
         [self.view addSubview:self.moviePlayer.view];

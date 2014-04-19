@@ -206,7 +206,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Send" id="M3J-mK-OdX">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="DQ9-AY-j1S">
+                        <barButtonItem key="leftBarButtonItem" id="DQ9-AY-j1S">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bhK-In-QsE">
                                 <rect key="frame" x="16" y="7" width="84" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -218,18 +218,7 @@
                                 </connections>
                             </button>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="iSl-y4-hTn">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1bS-wg-gFd">
-                                <rect key="frame" x="265" y="7" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Reply">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="reply:" destination="934-in-9k2" eventType="touchUpInside" id="8Ey-ql-1Cn"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="reply" id="iSl-y4-hTn"/>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2O4-Mp-Y4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -377,7 +366,7 @@
         <scene sceneID="BPR-J4-yCL">
             <objects>
                 <navigationController id="SAM-QV-HdH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox.png" id="yMg-KC-6Qa"/>
+                    <tabBarItem key="tabBarItem" title="Inbox" image="inbox" id="yMg-KC-6Qa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tyd-pg-S0W">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -396,7 +385,7 @@
         <scene sceneID="BJA-of-AdK">
             <objects>
                 <navigationController id="zJh-fY-VOy" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Friends" image="friends.png" id="6YW-Xf-kqN"/>
+                    <tabBarItem key="tabBarItem" title="Friends" image="friends" id="6YW-Xf-kqN"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="aKs-eY-mik">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -415,7 +404,7 @@
         <scene sceneID="71O-a1-4Dh">
             <objects>
                 <navigationController id="y1S-gv-rLP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" image="camera.png" id="DjA-tt-C9L"/>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="DjA-tt-C9L"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="MmC-tN-E3f">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -432,9 +421,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="camera.png" width="33" height="24"/>
-        <image name="friends.png" width="40" height="24"/>
-        <image name="inbox.png" width="32" height="21"/>
+        <image name="camera" width="33" height="24"/>
+        <image name="friends" width="40" height="24"/>
+        <image name="inbox" width="32" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

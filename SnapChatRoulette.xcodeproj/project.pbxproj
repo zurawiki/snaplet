@@ -15,7 +15,6 @@
 		DB3B95A3190211460018446A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959B190211460018446A /* ImageViewController.m */; };
 		DB3B95A4190211460018446A /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959D190211460018446A /* InboxViewController.m */; };
 		DB3B95A5190211460018446A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959F190211460018446A /* LoginViewController.m */; };
-		DB3B95C11902120E0018446A /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3B95BF1902120E0018446A /* inbox@2x.png */; };
 		DB3B95C31902124B0018446A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3B95C21902124B0018446A /* MainStoryboard.storyboard */; };
 		DB5B55F419020F0C00D34DB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F319020F0C00D34DB9 /* Foundation.framework */; };
 		DB5B55F619020F0C00D34DB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F519020F0C00D34DB9 /* CoreGraphics.framework */; };
@@ -58,7 +57,6 @@
 		DB3B959D190211460018446A /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
 		DB3B959E190211460018446A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		DB3B959F190211460018446A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		DB3B95BF1902120E0018446A /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		DB3B95C21902124B0018446A /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		DB5AA36A190214C700342064 /* libPods-Facebook-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Facebook-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Facebook-iOS-SDK.a"; sourceTree = "<group>"; };
 		DB5AA36B190214C700342064 /* libPods-Parse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Parse.a"; path = "Pods/build/Debug-iphoneos/libPods-Parse.a"; sourceTree = "<group>"; };
@@ -108,12 +106,12 @@
 		DB5B55E719020F0C00D34DB9 = {
 			isa = PBXGroup;
 			children = (
-				DB3B95C21902124B0018446A /* MainStoryboard.storyboard */,
 				DB5B55F919020F0C00D34DB9 /* SnapChatRoulette */,
-				DB5B561219020F0C00D34DB9 /* SnapChatRouletteTests */,
+				DB3B95C21902124B0018446A /* MainStoryboard.storyboard */,
+				B854933123E44C5986E7A106 /* Pods.xcconfig */,
 				DB5B55F219020F0C00D34DB9 /* Frameworks */,
 				DB5B55F119020F0C00D34DB9 /* Products */,
-				B854933123E44C5986E7A106 /* Pods.xcconfig */,
+				DB5B561219020F0C00D34DB9 /* SnapChatRouletteTests */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,17 +148,17 @@
 				DB3B9597190211460018446A /* EditFriendsViewController.m */,
 				DB3B9598190211460018446A /* FriendsViewController.h */,
 				DB3B9599190211460018446A /* FriendsViewController.m */,
+				DB5B560519020F0C00D34DB9 /* Images.xcassets */,
 				DB3B959A190211460018446A /* ImageViewController.h */,
 				DB3B959B190211460018446A /* ImageViewController.m */,
 				DB3B959C190211460018446A /* InboxViewController.h */,
 				DB3B959D190211460018446A /* InboxViewController.m */,
 				DB3B959E190211460018446A /* LoginViewController.h */,
 				DB3B959F190211460018446A /* LoginViewController.m */,
-				DB3B9585190210920018446A /* SignupViewController.h */,
-				DB3B9586190210920018446A /* SignupViewController.m */,
 				DB5B560219020F0C00D34DB9 /* RZAppDelegate.h */,
 				DB5B560319020F0C00D34DB9 /* RZAppDelegate.m */,
-				DB5B560519020F0C00D34DB9 /* Images.xcassets */,
+				DB3B9585190210920018446A /* SignupViewController.h */,
+				DB3B9586190210920018446A /* SignupViewController.m */,
 				DB5B55FA19020F0C00D34DB9 /* Supporting Files */,
 			);
 			path = SnapChatRoulette;
@@ -277,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5B55FE19020F0C00D34DB9 /* InfoPlist.strings in Resources */,
-				DB3B95C11902120E0018446A /* inbox@2x.png in Resources */,
 				DB5B560619020F0C00D34DB9 /* Images.xcassets in Resources */,
 				DB3B95C31902124B0018446A /* MainStoryboard.storyboard in Resources */,
 			);
