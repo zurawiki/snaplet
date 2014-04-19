@@ -2,20 +2,19 @@
 //  RZAppDelegate.m
 //  SnapChatRoulette
 //
-//  Created by Roger Zurawicki on 4/18/14.
+//  Created by Roger Zurawicki on 4/14/14.
 //  Copyright (c) 2014 Roger Zurawicki. All rights reserved.
 //
 
 #import "RZAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation RZAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+    [Parse setApplicationId:@"UsYb8eLCNnrv4Ar1FHLzlsedsLAFoQUf7QKGAIy5"
+                  clientKey:@"qcSwRespQYw7b7XNGoa8BtE3KmSPGy1ZaYpuCWJF"];
     return YES;
 }
 
@@ -27,7 +26,7 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
 {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
+    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
     // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
 }
 

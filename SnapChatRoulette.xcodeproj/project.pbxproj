@@ -7,6 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E4F41E7333341D6A0BCB454 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9BB961E8054C8FB8391C15 /* libPods.a */; };
+		DB3B9587190210920018446A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9586190210920018446A /* SignupViewController.m */; };
+		DB3B95A0190211460018446A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9595190211460018446A /* CameraViewController.m */; };
+		DB3B95A1190211460018446A /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9597190211460018446A /* EditFriendsViewController.m */; };
+		DB3B95A2190211460018446A /* FriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9599190211460018446A /* FriendsViewController.m */; };
+		DB3B95A3190211460018446A /* ImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959B190211460018446A /* ImageViewController.m */; };
+		DB3B95A4190211460018446A /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959D190211460018446A /* InboxViewController.m */; };
+		DB3B95A5190211460018446A /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B959F190211460018446A /* LoginViewController.m */; };
+		DB3B95C11902120E0018446A /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DB3B95BF1902120E0018446A /* inbox@2x.png */; };
+		DB3B95C31902124B0018446A /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB3B95C21902124B0018446A /* MainStoryboard.storyboard */; };
 		DB5B55F419020F0C00D34DB9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F319020F0C00D34DB9 /* Foundation.framework */; };
 		DB5B55F619020F0C00D34DB9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F519020F0C00D34DB9 /* CoreGraphics.framework */; };
 		DB5B55F819020F0C00D34DB9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB5B55F719020F0C00D34DB9 /* UIKit.framework */; };
@@ -32,6 +42,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E9BB961E8054C8FB8391C15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B854933123E44C5986E7A106 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DB3B9585190210920018446A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
+		DB3B9586190210920018446A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
+		DB3B9594190211460018446A /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
+		DB3B9595190211460018446A /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
+		DB3B9596190211460018446A /* EditFriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsViewController.h; sourceTree = "<group>"; };
+		DB3B9597190211460018446A /* EditFriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsViewController.m; sourceTree = "<group>"; };
+		DB3B9598190211460018446A /* FriendsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsViewController.h; sourceTree = "<group>"; };
+		DB3B9599190211460018446A /* FriendsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsViewController.m; sourceTree = "<group>"; };
+		DB3B959A190211460018446A /* ImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageViewController.h; sourceTree = "<group>"; };
+		DB3B959B190211460018446A /* ImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageViewController.m; sourceTree = "<group>"; };
+		DB3B959C190211460018446A /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		DB3B959D190211460018446A /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		DB3B959E190211460018446A /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		DB3B959F190211460018446A /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		DB3B95BF1902120E0018446A /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
+		DB3B95C21902124B0018446A /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		DB5AA36A190214C700342064 /* libPods-Facebook-iOS-SDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Facebook-iOS-SDK.a"; path = "Pods/build/Debug-iphoneos/libPods-Facebook-iOS-SDK.a"; sourceTree = "<group>"; };
+		DB5AA36B190214C700342064 /* libPods-Parse.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-Parse.a"; path = "Pods/build/Debug-iphoneos/libPods-Parse.a"; sourceTree = "<group>"; };
 		DB5B55F019020F0C00D34DB9 /* SnapChatRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SnapChatRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB5B55F319020F0C00D34DB9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		DB5B55F519020F0C00D34DB9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +88,7 @@
 				DB5B55F619020F0C00D34DB9 /* CoreGraphics.framework in Frameworks */,
 				DB5B55F819020F0C00D34DB9 /* UIKit.framework in Frameworks */,
 				DB5B55F419020F0C00D34DB9 /* Foundation.framework in Frameworks */,
+				7E4F41E7333341D6A0BCB454 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,10 +108,12 @@
 		DB5B55E719020F0C00D34DB9 = {
 			isa = PBXGroup;
 			children = (
+				DB3B95C21902124B0018446A /* MainStoryboard.storyboard */,
 				DB5B55F919020F0C00D34DB9 /* SnapChatRoulette */,
 				DB5B561219020F0C00D34DB9 /* SnapChatRouletteTests */,
 				DB5B55F219020F0C00D34DB9 /* Frameworks */,
 				DB5B55F119020F0C00D34DB9 /* Products */,
+				B854933123E44C5986E7A106 /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -91,15 +124,19 @@
 				DB5B560B19020F0C00D34DB9 /* SnapChatRouletteTests.xctest */,
 			);
 			name = Products;
+			path = out;
 			sourceTree = "<group>";
 		};
 		DB5B55F219020F0C00D34DB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB5AA36A190214C700342064 /* libPods-Facebook-iOS-SDK.a */,
+				DB5AA36B190214C700342064 /* libPods-Parse.a */,
 				DB5B55F319020F0C00D34DB9 /* Foundation.framework */,
 				DB5B55F519020F0C00D34DB9 /* CoreGraphics.framework */,
 				DB5B55F719020F0C00D34DB9 /* UIKit.framework */,
 				DB5B560C19020F0C00D34DB9 /* XCTest.framework */,
+				1E9BB961E8054C8FB8391C15 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -107,6 +144,20 @@
 		DB5B55F919020F0C00D34DB9 /* SnapChatRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				DB3B9594190211460018446A /* CameraViewController.h */,
+				DB3B9595190211460018446A /* CameraViewController.m */,
+				DB3B9596190211460018446A /* EditFriendsViewController.h */,
+				DB3B9597190211460018446A /* EditFriendsViewController.m */,
+				DB3B9598190211460018446A /* FriendsViewController.h */,
+				DB3B9599190211460018446A /* FriendsViewController.m */,
+				DB3B959A190211460018446A /* ImageViewController.h */,
+				DB3B959B190211460018446A /* ImageViewController.m */,
+				DB3B959C190211460018446A /* InboxViewController.h */,
+				DB3B959D190211460018446A /* InboxViewController.m */,
+				DB3B959E190211460018446A /* LoginViewController.h */,
+				DB3B959F190211460018446A /* LoginViewController.m */,
+				DB3B9585190210920018446A /* SignupViewController.h */,
+				DB3B9586190210920018446A /* SignupViewController.m */,
 				DB5B560219020F0C00D34DB9 /* RZAppDelegate.h */,
 				DB5B560319020F0C00D34DB9 /* RZAppDelegate.m */,
 				DB5B560519020F0C00D34DB9 /* Images.xcassets */,
@@ -151,9 +202,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DB5B561C19020F0C00D34DB9 /* Build configuration list for PBXNativeTarget "SnapChatRoulette" */;
 			buildPhases = (
+				124428D5CBF24684A4075D40 /* Check Pods Manifest.lock */,
 				DB5B55EC19020F0C00D34DB9 /* Sources */,
 				DB5B55ED19020F0C00D34DB9 /* Frameworks */,
 				DB5B55EE19020F0C00D34DB9 /* Resources */,
+				0F66206EA27A4477A6839331 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -192,6 +245,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "Roger Zurawicki";
 				TargetAttributes = {
+					DB5B55EF19020F0C00D34DB9 = {
+						DevelopmentTeam = D4HDFSUKPE;
+					};
 					DB5B560A19020F0C00D34DB9 = {
 						TestTargetID = DB5B55EF19020F0C00D34DB9;
 					};
@@ -221,7 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB5B55FE19020F0C00D34DB9 /* InfoPlist.strings in Resources */,
+				DB3B95C11902120E0018446A /* inbox@2x.png in Resources */,
 				DB5B560619020F0C00D34DB9 /* Images.xcassets in Resources */,
+				DB3B95C31902124B0018446A /* MainStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -235,13 +293,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0F66206EA27A4477A6839331 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		124428D5CBF24684A4075D40 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DB5B55EC19020F0C00D34DB9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				DB5B560419020F0C00D34DB9 /* RZAppDelegate.m in Sources */,
+				DB3B95A0190211460018446A /* CameraViewController.m in Sources */,
+				DB3B95A2190211460018446A /* FriendsViewController.m in Sources */,
+				DB3B95A1190211460018446A /* EditFriendsViewController.m in Sources */,
+				DB3B95A3190211460018446A /* ImageViewController.m in Sources */,
+				DB3B95A4190211460018446A /* InboxViewController.m in Sources */,
 				DB5B560019020F0C00D34DB9 /* main.m in Sources */,
+				DB3B95A5190211460018446A /* LoginViewController.m in Sources */,
+				DB3B9587190210920018446A /* SignupViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -315,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -347,7 +445,8 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -355,26 +454,40 @@
 		};
 		DB5B561D19020F0C00D34DB9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B854933123E44C5986E7A106 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapChatRoulette/SnapChatRoulette-Prefix.pch";
 				INFOPLIST_FILE = "SnapChatRoulette/SnapChatRoulette-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
 		};
 		DB5B561E19020F0C00D34DB9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B854933123E44C5986E7A106 /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapChatRoulette/SnapChatRoulette-Prefix.pch";
 				INFOPLIST_FILE = "SnapChatRoulette/SnapChatRoulette-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -438,6 +551,7 @@
 				DB5B561E19020F0C00D34DB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DB5B561F19020F0C00D34DB9 /* Build configuration list for PBXNativeTarget "SnapChatRouletteTests" */ = {
 			isa = XCConfigurationList;
@@ -446,6 +560,7 @@
 				DB5B562119020F0C00D34DB9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
