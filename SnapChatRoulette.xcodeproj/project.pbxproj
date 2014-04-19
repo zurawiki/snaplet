@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7E4F41E7333341D6A0BCB454 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9BB961E8054C8FB8391C15 /* libPods.a */; };
+		DB2745E61902D3DA0085972D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB2745E51902D3DA0085972D /* MediaPlayer.framework */; };
 		DB3B9587190210920018446A /* SignupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9586190210920018446A /* SignupViewController.m */; };
 		DB3B95A0190211460018446A /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9595190211460018446A /* CameraViewController.m */; };
 		DB3B95A1190211460018446A /* EditFriendsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB3B9597190211460018446A /* EditFriendsViewController.m */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1E9BB961E8054C8FB8391C15 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		B854933123E44C5986E7A106 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DB2745E51902D3DA0085972D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		DB3B9585190210920018446A /* SignupViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupViewController.h; sourceTree = "<group>"; };
 		DB3B9586190210920018446A /* SignupViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupViewController.m; sourceTree = "<group>"; };
 		DB3B9594190211460018446A /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB2745E61902D3DA0085972D /* MediaPlayer.framework in Frameworks */,
 				DB5B55F619020F0C00D34DB9 /* CoreGraphics.framework in Frameworks */,
 				DB5B55F819020F0C00D34DB9 /* UIKit.framework in Frameworks */,
 				DB5B55F419020F0C00D34DB9 /* Foundation.framework in Frameworks */,
@@ -137,6 +140,7 @@
 		DB5B55F219020F0C00D34DB9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DB2745E51902D3DA0085972D /* MediaPlayer.framework */,
 				DB5AA36A190214C700342064 /* libPods-Facebook-iOS-SDK.a */,
 				DB5AA36B190214C700342064 /* libPods-Parse.a */,
 				DB5B55F319020F0C00D34DB9 /* Foundation.framework */,
@@ -474,6 +478,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapChatRoulette/SnapChatRoulette-Prefix.pch";
 				INFOPLIST_FILE = "SnapChatRoulette/SnapChatRoulette-Info.plist";
@@ -482,6 +487,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
@@ -494,6 +500,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SnapChatRoulette/SnapChatRoulette-Prefix.pch";
 				INFOPLIST_FILE = "SnapChatRoulette/SnapChatRoulette-Info.plist";
@@ -502,6 +509,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};

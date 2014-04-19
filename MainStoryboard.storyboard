@@ -18,7 +18,7 @@
                     <connections>
                         <segue destination="SAM-QV-HdH" kind="relationship" relationship="viewControllers" id="OUg-hC-EVz"/>
                         <segue destination="zJh-fY-VOy" kind="relationship" relationship="viewControllers" id="yfc-p5-v3s"/>
-                        <segue destination="y1S-gv-rLP" kind="relationship" relationship="viewControllers" id="y5K-Zn-MF2"/>
+                        <segue destination="934-in-9k2" kind="relationship" relationship="viewControllers" id="nJC-mJ-VFn"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTa-e3-PLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -101,26 +101,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap one of the buttons above, to send your snapchat" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="232" translatesAutoresizingMaskIntoConstraints="NO" id="8WO-Aw-Ulh">
-                                <rect key="frame" x="44" y="219" width="232" height="130"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rYj-gu-2nw">
+                                <rect key="frame" x="0.0" y="20" width="320" height="553"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <view contentMode="scaleAspectFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="A9k-dK-Qpn" customClass="ACEDrawingView">
+                                <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uj5-Si-Q4N">
-                                <rect key="frame" x="133" y="366" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancel:" destination="934-in-9k2" eventType="touchUpInside" id="O7X-s0-uvq"/>
-                                </connections>
-                            </button>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pBG-qk-aam">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <barButtonItem systemItem="stop" id="vNz-3M-gbn">
+                                        <connections>
+                                            <action selector="cancel:" destination="934-in-9k2" id="Ux7-EZ-DOC"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Ue9-Qk-WmX"/>
+                                    <barButtonItem systemItem="reply" id="qiU-Ov-hdJ">
+                                        <connections>
+                                            <action selector="undo:" destination="934-in-9k2" id="tuO-Qy-Tew"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem systemItem="compose" id="MaB-qS-8yd"/>
+                                </items>
+                            </toolbar>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ddW-fL-b2x">
+                                <rect key="frame" x="0.0" y="475" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="VjU-ou-qUE"/>
+                                    <barButtonItem systemItem="fastForward" id="4wq-4T-a2H">
+                                        <connections>
+                                            <action selector="send:" destination="934-in-9k2" id="NQK-xR-amI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="qGg-do-5iT"/>
+                    <toolbarItems/>
                     <navigationItem key="navigationItem" title="Send" id="M3J-mK-OdX">
                         <barButtonItem key="leftBarButtonItem" id="DQ9-AY-j1S">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="bhK-In-QsE">
@@ -136,10 +164,19 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="reply" id="iSl-y4-hTn"/>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="bottomToolbar" destination="ddW-fL-b2x" id="bMF-nQ-NOO"/>
+                        <outlet property="drawingView" destination="A9k-dK-Qpn" id="tkO-qh-Sgu"/>
+                        <outlet property="editButton" destination="MaB-qS-8yd" id="cVc-c5-JEq"/>
+                        <outlet property="imageView" destination="rYj-gu-2nw" id="epH-oM-Gvj"/>
+                        <outlet property="topToolbar" destination="pBG-qk-aam" id="ckJ-xy-13e"/>
+                        <outlet property="undoButton" destination="qiU-Ov-hdJ" id="rQ8-98-Dv8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2O4-Mp-Y4m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="900"/>
+            <point key="canvasLocation" x="462" y="1022"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="lGl-P8-juD">
@@ -157,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Gzg-YK-i0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1398" y="-350"/>
+            <point key="canvasLocation" x="1356" y="-350"/>
         </scene>
         <!--Image View Controller-->
         <scene sceneID="o0y-4h-PgL">
@@ -193,7 +230,7 @@
             </objects>
             <point key="canvasLocation" x="1292" y="-1063"/>
         </scene>
-        <!--Inbox View Controller - Ribbit-->
+        <!--Inbox View Controller - Inbox-->
         <scene sceneID="K2q-hk-Jwk">
             <objects>
                 <tableViewController id="4uG-zQ-ztV" customClass="InboxViewController" sceneMemberID="viewController">
@@ -216,7 +253,7 @@
                             <outlet property="delegate" destination="4uG-zQ-ztV" id="A6l-wn-hxl"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Ribbit" id="ao4-kE-he2">
+                    <navigationItem key="navigationItem" title="Inbox" id="ao4-kE-he2">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="D3W-5L-cIi">
                             <connections>
                                 <action selector="logout:" destination="4uG-zQ-ztV" id="L7V-9m-1y3"/>
@@ -233,71 +270,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Haq-D9-wB8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1005" y="-350"/>
-        </scene>
-        <!--Signup View Controller - Ribbit-->
-        <scene sceneID="aBP-V4-woW">
-            <objects>
-                <viewController id="EZc-59-qKm" customClass="SignupViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="YVm-Lk-eV5"/>
-                        <viewControllerLayoutGuide type="bottom" id="yFW-pd-Mxu"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="g8J-ZB-wYT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Eqo-hT-l2U">
-                                <rect key="frame" x="20" y="70" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jor-yE-8rP">
-                                <rect key="frame" x="20" y="108" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ltv-J2-q6L">
-                                <rect key="frame" x="20" y="184" width="280" height="30"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="signup:" destination="EZc-59-qKm" eventType="touchUpInside" id="1hl-xV-y9m"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9pk-dW-1XS">
-                                <rect key="frame" x="20" y="146" width="280" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
-                            </textField>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Eqo-hT-l2U" firstAttribute="top" secondItem="g8J-ZB-wYT" secondAttribute="top" constant="70" id="6as-9R-k9t"/>
-                            <constraint firstItem="9pk-dW-1XS" firstAttribute="leading" secondItem="g8J-ZB-wYT" secondAttribute="leading" constant="20" symbolic="YES" id="ABg-nu-LeY"/>
-                            <constraint firstAttribute="trailing" secondItem="jor-yE-8rP" secondAttribute="trailing" constant="20" symbolic="YES" id="CMq-Cw-NyG"/>
-                            <constraint firstAttribute="trailing" secondItem="ltv-J2-q6L" secondAttribute="trailing" constant="20" symbolic="YES" id="HGW-Lg-gu8"/>
-                            <constraint firstItem="jor-yE-8rP" firstAttribute="leading" secondItem="g8J-ZB-wYT" secondAttribute="leading" constant="20" symbolic="YES" id="KIa-j7-Pyb"/>
-                            <constraint firstAttribute="trailing" secondItem="9pk-dW-1XS" secondAttribute="trailing" constant="20" symbolic="YES" id="RVG-Eb-2b9"/>
-                            <constraint firstItem="ltv-J2-q6L" firstAttribute="top" secondItem="9pk-dW-1XS" secondAttribute="bottom" constant="8" symbolic="YES" id="SS1-8T-7Mm"/>
-                            <constraint firstItem="9pk-dW-1XS" firstAttribute="top" secondItem="jor-yE-8rP" secondAttribute="bottom" constant="8" symbolic="YES" id="Yhf-M0-PaN"/>
-                            <constraint firstAttribute="trailing" secondItem="Eqo-hT-l2U" secondAttribute="trailing" constant="20" symbolic="YES" id="fgZ-JY-IY3"/>
-                            <constraint firstItem="Eqo-hT-l2U" firstAttribute="leading" secondItem="g8J-ZB-wYT" secondAttribute="leading" constant="20" symbolic="YES" id="jTQ-Q1-290"/>
-                            <constraint firstItem="ltv-J2-q6L" firstAttribute="leading" secondItem="g8J-ZB-wYT" secondAttribute="leading" constant="20" symbolic="YES" id="sO2-G7-Jcn"/>
-                            <constraint firstItem="jor-yE-8rP" firstAttribute="top" secondItem="Eqo-hT-l2U" secondAttribute="bottom" constant="8" symbolic="YES" id="uuO-Ki-dJf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Ribbit" id="86g-jc-CQe"/>
-                    <connections>
-                        <outlet property="emailField" destination="9pk-dW-1XS" id="RaH-Qx-dNZ"/>
-                        <outlet property="passwordField" destination="jor-yE-8rP" id="lbk-f3-mru"/>
-                        <outlet property="usernameField" destination="Eqo-hT-l2U" id="mZN-A3-NiG"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lzd-E8-FIY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1812" y="-350"/>
+            <point key="canvasLocation" x="867" y="-350"/>
         </scene>
         <!--Navigation Controller - Inbox-->
         <scene sceneID="BPR-J4-yCL">
@@ -336,25 +309,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZpP-TH-vNA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="481" y="227"/>
-        </scene>
-        <!--Navigation Controller - Camera-->
-        <scene sceneID="71O-a1-4Dh">
-            <objects>
-                <navigationController id="y1S-gv-rLP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Camera" image="camera" id="DjA-tt-C9L"/>
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MmC-tN-E3f">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="934-in-9k2" kind="relationship" relationship="rootViewController" id="1Js-Zh-FaL"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="STy-3z-xxY" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="481" y="809"/>
         </scene>
     </scenes>
     <resources>
