@@ -17,11 +17,10 @@
 #import "FBProfilePictureView.h"
 
 #import "FBAccessTokenData.h"
+#import "FBInternalSettings.h"
 #import "FBProfilePictureViewBlankProfilePortraitPNG.h"
 #import "FBProfilePictureViewBlankProfileSquarePNG.h"
-#import "FBSDKVersion.h"
 #import "FBSession.h"
-#import "FBSettings.h"
 #import "FBURLConnection.h"
 #import "FBUtility.h"
 
@@ -104,7 +103,6 @@
         return @{
                  @"width": @(width),
                  @"height": @(width),
-                 @"migration_bundle": FB_IOS_SDK_MIGRATION_BUNDLE,
                  };
     }
 

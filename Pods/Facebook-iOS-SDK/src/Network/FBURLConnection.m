@@ -18,15 +18,15 @@
 
 #import "FBDataDiskCache.h"
 #import "FBError.h"
+#import "FBInternalSettings.h"
 #import "FBLogger.h"
 #import "FBSession.h"
 #import "FBSettings+Internal.h"
-#import "FBSettings.h"
 #import "FBUtility.h"
 
 static NSArray *_cdnHosts;
 
-@interface FBURLConnection ()
+@interface FBURLConnection () <NSURLConnectionDataDelegate>
 
 @property (nonatomic, retain) NSURLConnection *connection;
 @property (nonatomic, retain) NSMutableData *data;
@@ -60,7 +60,8 @@ static NSArray *_cdnHosts;
 
 - (FBURLConnection *)initWithURL:(NSURL *)url
                completionHandler:(FBURLConnectionHandler)handler {
-    NSURLRequest *request = [[[NSURLRequest alloc] initWithURL:url] autorelease];
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] initWithURL:url] autorelease];
+    [request setHTTPShouldHandleCookies:NO];
 
     return [self initWithRequest:request
            skipRoundTripIfCached:YES
@@ -97,10 +98,6 @@ static NSArray *_cdnHosts;
 
             self.handler = handler;
         }
-
-        // always attempt to autoPublish.  this function internally
-        // handles only executing once.
-        [FBSettings autoPublishInstall:nil];
     }
     return self;
 }
@@ -261,6 +258,20 @@ didReceiveResponse:(NSURLResponse *)response {
     }
 
     return request;
+}
+
+- (void)       connection:(NSURLConnection *)connection
+          didSendBodyData:(NSInteger)bytesWritten
+        totalBytesWritten:(NSInteger)totalBytesWritten
+totalBytesExpectedToWrite:(NSInteger)totalBytesExpectedToWrite {
+    id<FBURLConnectionDelegate> delegate = self.delegate;
+
+    if ([delegate respondsToSelector:@selector(facebookURLConnection:didSendBodyData:totalBytesWritten:totalBytesExpectedToWrite:)]) {
+        [delegate facebookURLConnection:self
+                        didSendBodyData:bytesWritten
+                      totalBytesWritten:totalBytesWritten
+              totalBytesExpectedToWrite:totalBytesExpectedToWrite];
+    }
 }
 
 - (BOOL)shouldShortCircuitRedirectResponse:(NSURLResponse *)redirectResponse {

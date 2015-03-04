@@ -34,12 +34,13 @@ typedef enum {
     ACEDrawingToolTypeRectagleFill,
     ACEDrawingToolTypeEllipseStroke,
     ACEDrawingToolTypeEllipseFill,
-    ACEDrawingToolTypeEraser
+    ACEDrawingToolTypeEraser,
+    ACEDrawingToolTypeText
 } ACEDrawingToolType;
 
 @protocol ACEDrawingViewDelegate, ACEDrawingTool;
 
-@interface ACEDrawingView : UIView
+@interface ACEDrawingView : UIView<UITextViewDelegate>
 
 @property (nonatomic, assign) ACEDrawingToolType drawTool;
 @property (nonatomic, assign) id<ACEDrawingViewDelegate> delegate;
@@ -49,11 +50,14 @@ typedef enum {
 @property (nonatomic, assign) CGFloat lineWidth;
 @property (nonatomic, assign) CGFloat lineAlpha;
 
-
 // get the current drawing
 @property (nonatomic, strong, readonly) UIImage *image;
+@property (nonatomic, strong) UIImage *prev_image;
 @property (nonatomic, readonly) NSUInteger undoSteps;
 
+// load external image
+- (void)loadImage:(UIImage *)image;
+- (void)loadImageData:(NSData *)imageData;
 
 // erase all
 - (void)clear;

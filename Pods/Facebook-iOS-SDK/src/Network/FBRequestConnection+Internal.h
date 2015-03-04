@@ -16,8 +16,12 @@
 
 #import "FBRequestConnection.h"
 #import "FBRequestMetadata.h"
+#import "FBSDKMacros.h"
 
 @class FBRequestConnectionRetryManager;
+
+FBSDK_EXTERN NSString *const kGraphURLPrefix;
+FBSDK_EXTERN NSString *const kApiURLPrefix;
 
 @interface FBRequestConnection (Internal)
 
@@ -31,5 +35,14 @@
          skipRoundtripIfCached:(BOOL)consultCache;
 
 - (FBRequestMetadata *)getRequestMetadata:(FBRequest *)request;
+
+// for testing
+- (NSString *)urlStringForSingleRequest:(FBRequest *)request forBatch:(BOOL)forBatch;
+
+- (NSString *)accessTokenWithRequest:(FBRequest *)request;
+
+- (NSArray *)parseJSONResponse:(NSData *)data
+                         error:(NSError **)error
+                    statusCode:(NSInteger)statusCode;
 
 @end

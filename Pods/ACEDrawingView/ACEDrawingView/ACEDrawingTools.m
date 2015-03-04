@@ -24,6 +24,11 @@
  */
 
 #import "ACEDrawingTools.h"
+#if (TARGET_OS_EMBEDDED || TARGET_OS_IPHONE)
+#import <CoreText/CoreText.h>
+#else
+#import <AppKit/AppKit.h>
+#endif
 
 CGPoint midPoint(CGPoint p1, CGPoint p2)
 {
@@ -104,12 +109,14 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 - (void)draw
 {
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
+    CGContextSaveGState(context);
+
 	CGContextAddPath(context, path);
     CGContextSetLineCap(context, kCGLineCapRound);
     CGContextSetLineWidth(context, self.lineWidth);
     CGContextSetBlendMode(context, kCGBlendModeClear);
     CGContextStrokePath(context);
+    CGContextRestoreGState(context);
 }
 
 @end
@@ -166,6 +173,89 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
 
 @end
 
+#pragma mark - ACEDrawingTextTool
+
+@interface ACEDrawingTextTool ()
+@property (nonatomic, assign) CGPoint firstPoint;
+@property (nonatomic, assign) CGPoint lastPoint;
+@end
+
+#pragma mark -
+
+@implementation ACEDrawingTextTool
+
+@synthesize lineColor = _lineColor;
+@synthesize lineAlpha = _lineAlpha;
+@synthesize lineWidth = _lineWidth;
+@synthesize attributedText = _attributedText;
+
+- (void)setInitialPoint:(CGPoint)firstPoint
+{
+    self.firstPoint = firstPoint;
+}
+
+- (void)moveFromPoint:(CGPoint)startPoint toPoint:(CGPoint)endPoint
+{
+    self.lastPoint = endPoint;
+}
+
+- (void)draw
+{
+    
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    
+    CGContextSaveGState(context);
+    CGContextSetAlpha(context, self.lineAlpha);
+    
+    // draw the text
+    CGRect viewBounds = CGRectMake(MIN(self.firstPoint.x, self.lastPoint.x),
+                                   MIN(self.firstPoint.y, self.lastPoint.y),
+                                   fabs(self.firstPoint.x - self.lastPoint.x),
+                                   fabs(self.firstPoint.y - self.lastPoint.y)
+                                   );
+    
+    // Flip the context coordinates, in iOS only.
+    CGContextTranslateCTM(context, 0, viewBounds.size.height);
+    CGContextScaleCTM(context, 1.0, -1.0);
+    
+    // Set the text matrix.
+    CGContextSetTextMatrix(context, CGAffineTransformIdentity);
+    
+    // Create a path which bounds the area where you will be drawing text.
+    // The path need not be rectangular.
+    CGMutablePathRef path = CGPathCreateMutable();
+    
+    // In this simple example, initialize a rectangular path.
+    CGRect bounds = CGRectMake(viewBounds.origin.x, -viewBounds.origin.y, viewBounds.size.width, viewBounds.size.height);
+    CGPathAddRect(path, NULL, bounds );
+    
+    // Create the framesetter with the attributed string.
+    CTFramesetterRef framesetter = CTFramesetterCreateWithAttributedString((__bridge_retained CFAttributedStringRef)self.attributedText);
+    
+    // Create a frame.
+    CTFrameRef frame = CTFramesetterCreateFrame(framesetter, CFRangeMake(0, 0), path, NULL);
+    
+    // Draw the specified frame in the given context.
+    CTFrameDraw(frame, context);
+    
+    // Release the objects we used.
+    CFRelease(frame);
+    CFRelease(framesetter);
+    CFRelease(path);
+    CGContextRestoreGState(context);
+}
+
+- (void)dealloc
+{
+    self.lineColor = nil;
+    self.attributedText = nil;
+#if !ACE_HAS_ARC
+    [super dealloc];
+#endif
+}
+
+@end
+
 
 #pragma mark - ACEDrawingRectangleTool
 
@@ -200,7 +290,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     CGContextSetAlpha(context, self.lineAlpha);
     
     // draw the rectangle
-    CGRect rectToFill = CGRectMake(self.firstPoint.x, self.firstPoint.y, self.lastPoint.x - self.firstPoint.x, self.lastPoint.y - self.firstPoint.y);    
+    CGRect rectToFill = CGRectMake(self.firstPoint.x, self.firstPoint.y, self.lastPoint.x - self.firstPoint.x, self.lastPoint.y - self.firstPoint.y);
     if (self.fill) {
         CGContextSetFillColorWithColor(context, self.lineColor.CGColor);
         CGContextFillRect(UIGraphicsGetCurrentContext(), rectToFill);
@@ -208,7 +298,7 @@ CGPoint midPoint(CGPoint p1, CGPoint p2)
     } else {
         CGContextSetStrokeColorWithColor(context, self.lineColor.CGColor);
         CGContextSetLineWidth(context, self.lineWidth);
-        CGContextStrokeRect(UIGraphicsGetCurrentContext(), rectToFill);        
+        CGContextStrokeRect(UIGraphicsGetCurrentContext(), rectToFill);
     }
 }
 

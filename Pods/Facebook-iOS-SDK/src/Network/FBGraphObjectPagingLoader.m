@@ -163,13 +163,19 @@
         [self.delegate pagingLoader:self didLoadData:results];
     }
 
-    // If we are supposed to keep paging, do so. But unless we are viewless, if we have lost
-    // our tableView, take that as a sign to stop (probably because the view was unloaded).
-    // If tableView is re-set, we will start again.
-    if ((self.pagingMode == FBGraphObjectPagingModeImmediate &&
-         self.tableView) ||
-        self.pagingMode == FBGraphObjectPagingModeImmediateViewless) {
-        [self followNextLink];
+    if (self.nextLink != nil) {
+        // If we are supposed to keep paging, do so. But unless we are viewless, if we have lost
+        // our tableView, take that as a sign to stop (probably because the view was unloaded).
+        // If tableView is re-set, we will start again.
+        if ((self.pagingMode == FBGraphObjectPagingModeImmediate &&
+             self.tableView) ||
+            self.pagingMode == FBGraphObjectPagingModeImmediateViewless) {
+            [self followNextLink];
+        }
+    } else {
+        if ([self.delegate respondsToSelector:@selector(pagingLoaderDidFinishLoading:)]) {
+            [self.delegate pagingLoaderDidFinishLoading:self];
+        }
     }
 }
 
@@ -188,15 +194,18 @@
 
         FBRequestConnection *connection = [[FBRequestConnection alloc] init];
         [connection addRequest:request completionHandler:
-         ^(FBRequestConnection *connection, id result, NSError *error) {
-             _isResultFromCache = _isResultFromCache || connection.isResultFromCache;
+         ^(FBRequestConnection *innerConnection, id result, NSError *error) {
+             _isResultFromCache = _isResultFromCache || innerConnection.isResultFromCache;
+             [innerConnection retain];
              self.connection = nil;
-             [self requestCompleted:connection result:result error:error];
+             [self requestCompleted:innerConnection result:result error:error];
+             [innerConnection release];
          }];
 
         // Override the URL using the one passed back in 'next'.
         NSURL *url = [NSURL URLWithString:self.nextLink];
         NSMutableURLRequest *urlRequest = [NSMutableURLRequest requestWithURL:url];
+        [urlRequest setHTTPShouldHandleCookies:NO];
         connection.urlRequest = urlRequest;
 
         self.nextLink = nil;
@@ -223,9 +232,9 @@
 
     FBRequestConnection *connection = [[FBRequestConnection alloc] init];
     [connection addRequest:request
-         completionHandler:^(FBRequestConnection *connection, id result, NSError *error) {
-             _isResultFromCache = _isResultFromCache || connection.isResultFromCache;
-             [self requestCompleted:connection result:result error:error];
+         completionHandler:^(FBRequestConnection *innerConnection, id result, NSError *error) {
+             _isResultFromCache = _isResultFromCache || innerConnection.isResultFromCache;
+             [self requestCompleted:innerConnection result:result error:error];
          }];
 
     self.connection = connection;

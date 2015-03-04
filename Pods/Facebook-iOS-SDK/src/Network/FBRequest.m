@@ -21,8 +21,8 @@
 #import "FBAppEvents+Internal.h"
 #import "FBGraphObject.h"
 #import "FBLogger.h"
-#import "FBSDKVersion.h"
 #import "FBSession+Internal.h"
+#import "FBSettings+Internal.h"
 #import "FBUtility.h"
 #import "Facebook.h"
 
@@ -34,11 +34,6 @@ static NSString *const kPostHTTPMethod = @"POST";
 
 // ----------------------------------------------------------------------------
 // FBRequest
-@interface FBRequest ()
-
-@property (assign, nonatomic) BOOL canCloseSessionOnError;
-
-@end
 
 @implementation FBRequest
 
@@ -105,8 +100,7 @@ static NSString *const kPostHTTPMethod = @"POST";
         self.canCloseSessionOnError = YES;
 
         // all request objects start life with a migration bundle set for the SDK
-        _parameters = [[NSMutableDictionary alloc]
-                       initWithObjectsAndKeys:FB_IOS_SDK_MIGRATION_BUNDLE, @"migration_bundle", nil];
+        _parameters = [[NSMutableDictionary alloc] init];
         if (parameters) {
             // but the incoming dictionary's migration bundle trumps the default one, if present
             [self.parameters addEntriesFromDictionary:parameters];
@@ -124,10 +118,29 @@ static NSString *const kPostHTTPMethod = @"POST";
     [_HTTPMethod release];
     [_parameters release];
     [_url release];
+    [_versionPart release];
     [_connection release];
     [_responseText release];
     [_error release];
     [super dealloc];
+}
+
+- (BOOL)hasAttachments {
+    __block BOOL hasAttachments = NO;
+    [self.parameters enumerateKeysAndObjectsUsingBlock:^(id key, id obj, BOOL *stop) {
+        if ([FBRequest isAttachment:obj]) {
+            hasAttachments = YES;
+            *stop = YES;
+        }
+    }];
+    return hasAttachments;
+}
+
++ (BOOL)isAttachment:(id)item
+{
+    return
+    [item isKindOfClass:[UIImage class]] ||
+    [item isKindOfClass:[NSData class]];
 }
 
 //@property(nonatomic,retain) id<FBGraphObject> graphObject;
@@ -154,6 +167,15 @@ static NSString *const kPostHTTPMethod = @"POST";
     return connection;
 }
 
+- (NSString *)versionPart {
+    return _versionPart;
+}
+
+- (void)overrideVersionPartWith:(NSString *)version {
+    [_versionPart release];
+    _versionPart = [version copy];
+}
+
 - (FBRequestConnection *)createRequestConnection {
     return [[[FBRequestConnection alloc] init] autorelease];
 }
@@ -165,11 +187,13 @@ static NSString *const kPostHTTPMethod = @"POST";
 }
 
 + (FBRequest *)requestForMyFriends {
+    NSDictionary *params = @{ @"fields": (([FBSettings isPlatformCompatibilityEnabled]) ?
+                                          @"id,name,username,first_name,last_name" :
+                                          @"id,name,first_name,last_name") };
+
     return [[[FBRequest alloc] initWithSession:[FBSession activeSessionIfOpen]
                                      graphPath:@"me/friends"
-                                    parameters:[NSDictionary dictionaryWithObjectsAndKeys:
-                                                @"id,name,username,first_name,last_name", @"fields",
-                                                nil]
+                                    parameters:params
                                     HTTPMethod:nil]
             autorelease];
 }
@@ -179,6 +203,24 @@ static NSString *const kPostHTTPMethod = @"POST";
     NSString *graphPath = @"me/photos";
     NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
     [parameters setObject:photo forKey:@"picture"];
+
+    FBRequest *request = [[[FBRequest alloc] initWithSession:[FBSession activeSessionIfOpen]
+                                                   graphPath:graphPath
+                                                  parameters:parameters
+                                                  HTTPMethod:@"POST"]
+                          autorelease];
+
+    [parameters release];
+
+    return request;
+}
+
++ (FBRequest *)requestForUploadVideo:(NSString *)filePath
+{
+    NSString *graphPath = @"me/videos";
+    NSData *videoData = [NSData dataWithContentsOfFile:filePath];
+    NSMutableDictionary *parameters = [[NSMutableDictionary alloc] init];
+    [parameters setObject:videoData forKey:filePath.lastPathComponent];
 
     FBRequest *request = [[[FBRequest alloc] initWithSession:[FBSession activeSessionIfOpen]
                                                    graphPath:graphPath
@@ -510,6 +552,13 @@ static NSString *const kPostHTTPMethod = @"POST";
                 [FBLogger singleShotLogEntry:FBLoggingBehaviorDeveloperErrors logEntry:@"can not use GET to upload a file"];
             }
             continue;
+        }
+        else if ([value isKindOfClass:[NSString class]]) {
+            value = value;
+        } else if ([value isKindOfClass:[NSNumber class]]) {
+            value = [value stringValue];
+        } else {
+            [FBLogger singleShotLogEntry:FBLoggingBehaviorDeveloperErrors formatString:@"Unsupported FBRequest parameter type:%@", [value class]];
         }
 
         NSString *escaped_value = [FBUtility stringByURLEncodingString:value];
